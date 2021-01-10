@@ -24,6 +24,7 @@ if(!isset($_POST['category_incomes']))
 					$category_incomes = $_POST['category_incomes'];
 					$amount_income = $_POST['amount_income'];
 					$income_coment = $_POST['income_coment'];
+					unset($_POST['category_incomes']);
 					
 					$result= $connection->query("SELECT name FROM incomes_category_assigned_to_users WHERE id='$category_incomes'");
 					if(!$result) throw new Exception($connection->error);

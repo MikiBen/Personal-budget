@@ -7,6 +7,8 @@ if(!isset($_POST['payment_methods']))
 	exit();
 }
 
+else{
+		
 	require_once "connect.php";
 	mysqli_report(MYSQLI_REPORT_STRICT);
 		try 
@@ -23,6 +25,7 @@ if(!isset($_POST['payment_methods']))
 					echo "Expense added:</br>";
 					$category_expenses = $_POST['category_expenses'];
 					$payment_methods = $_POST['payment_methods'];
+					unset($_POST['payment_methods']);
 					$amount_expense = $_POST['amount_expense'];
 					$expense_coment = $_POST['expense_coment'];
 					
@@ -59,7 +62,7 @@ if(!isset($_POST['payment_methods']))
 				//echo "błędy  ".$e;
 			}	
 			
-	
+}
 	
 ?>
 
