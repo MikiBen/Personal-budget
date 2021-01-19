@@ -27,7 +27,7 @@ require_once "connect.php";
 						
 						echo '<div class="row">';
 									
-						echo '<label> Amount:  <input type="number" name="amount_income" min="0" step=0.01></label>';
+						echo '<label> Amount:  <input type="number" name="amount_income" min="0" step=0.01 required></label>';
 						echo '</div></br>';
 						
 			
@@ -48,7 +48,7 @@ require_once "connect.php";
 						{
 							$category_incomes= $row['name'];
 							
-							echo '<label><input type="radio" value='.$row["id"].' name="category_incomes">'.$category_incomes.'</label></br>';
+							echo '<label><input type="radio" value='.$row["id"].' name="category_incomes" required>'.$category_incomes.'</label></br>';
 							
 						}	
 						echo '</fieldset>';
@@ -57,6 +57,11 @@ require_once "connect.php";
 						echo '<div class="row">';
 						echo	'<div><label for="coment"> Coment for income</label></div>';
 						echo '<textarea name="income_coment" rows="4" cols="80" maxlength="100"></textarea>';
+						echo '</div></br>';
+						
+						echo '<div class="row">';
+						echo'<div><label for="date"> Income date</label></div>';
+						echo '<input type="date" name="date_income" value='.date("Y-m-d").'></label>';
 						echo '</div></br>';
 						
 				

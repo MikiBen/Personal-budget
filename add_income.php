@@ -24,6 +24,7 @@ if(!isset($_POST['category_incomes']))
 					$category_incomes = $_POST['category_incomes'];
 					$amount_income = $_POST['amount_income'];
 					$income_coment = $_POST['income_coment'];
+					$income_date = $_POST['date_income'];
 					unset($_POST['category_incomes']);
 					
 					$result= $connection->query("SELECT name FROM incomes_category_assigned_to_users WHERE id='$category_incomes'");
@@ -34,10 +35,11 @@ if(!isset($_POST['category_incomes']))
 					
 					echo 'Amount: '.$amount_income.'</br>';
 					echo 'Category: '.$category_incomes_name.'</br>';
-					echo 'Coment: '.$income_coment;
+					echo 'Coment: '.$income_coment.'</br>';
+					echo 'Date: '.$income_date;
 			
 				$user_id=$_SESSION['user_id'];
-				if($connection->query("INSERT INTO incomes VALUES (NULL, '$user_id', '$category_incomes','$amount_income','2020-10-10','$income_coment') "));
+				if($connection->query("INSERT INTO incomes VALUES (NULL, '$user_id', '$category_incomes','$amount_income','$income_date','$income_coment') "));
 				
 				
 			}

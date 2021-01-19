@@ -28,10 +28,10 @@ if(!isset($_SESSION['logged']))
 			echo "<p>E-mail: ".$_SESSION['email']."</br></p>";
 			echo "<p><a href='expenses.php'> Add expenses </a></p>";
 			echo "<p><a href='incomes.php'> Add income</a></p>";
-			echo "<p><a href='view_balance.php'> View balance sheet </a></p>";
+			echo "<p><a href='choose_date.php'> View balance sheet </a></p>";
 			echo "<p><a href='kategorie.php'> Ustawienia kategorii - opcja jeszcze nie dostępna</a></p>";
 			echo "<p><a href='ustawienia.php'> Ustawienia konta - opcja jeszcze nie dostępna</a></p>";
-			echo "<p><a href='logout.php'> Wyloguj się</a></p>"; 
+			echo "<p><a href='logout.php'> Logout</a></p>"; 
 	
 ?>
 

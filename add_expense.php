@@ -28,6 +28,7 @@ else{
 					unset($_POST['payment_methods']);
 					$amount_expense = $_POST['amount_expense'];
 					$expense_coment = $_POST['expense_coment'];
+					$expense_date = $_POST['date_expense'];
 					
 					$result= $connection->query("SELECT name FROM expenses_category_assigned_to_users WHERE id='$category_expenses'");
 					if(!$result) throw new Exception($connection->error);
@@ -45,10 +46,11 @@ else{
 					echo 'Amount: '.$amount_expense.'</br>';
 					echo 'Category: '.$category_expenses_name.'</br>';
 					echo 'Payment methods: '.$payment_methods_name.'</br>';
-					echo 'Coment: '.$expense_coment;
+					echo 'Comment: '.$expense_coment.'</br>';
+					echo 'Date: '.$expense_date;
 			
 				$user_id=$_SESSION['user_id'];
-				if($connection->query("INSERT INTO expenses VALUES (NULL, '$user_id', '$category_expenses', '$payment_methods','$amount_expense','2020-10-10','$expense_coment') "));
+				if($connection->query("INSERT INTO expenses VALUES (NULL, '$user_id', '$category_expenses', '$payment_methods','$amount_expense','$expense_date','$expense_coment') "));
 				
 				
 			}

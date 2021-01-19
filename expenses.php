@@ -27,7 +27,7 @@ require_once "connect.php";
 						
 						echo '<div class="row">';
 									
-						echo '<label> Amount:  <input type="number" name="amount_expense" min="0" step=0.01></label>';
+						echo '<label> Amount:  <input type="number" name="amount_expense" min="0" step=0.01 required></label>';
 						echo '</div>';
 						
 			
@@ -48,7 +48,7 @@ require_once "connect.php";
 						{
 							$category_expenses= $row['name'];
 							
-							echo '<label><input type="radio" value='.$row["id"].' name="category_expenses">'.$category_expenses.'</label></br>';
+							echo '<label><input type="radio" value='.$row["id"].' name="category_expenses" required>'.$category_expenses.'</label></br>';
 						}	
 						echo '</fieldset>';
 						echo '</div></br>';
@@ -64,7 +64,7 @@ require_once "connect.php";
 						while($row=mysqli_fetch_array($result))
 						{
 							$payment_methods= $row['name'];
-							echo '<label><input type="radio" value='.$row["id"].' name="payment_methods">'.$payment_methods.'</label></br>';
+							echo '<label><input type="radio" value='.$row["id"].' name="payment_methods" required>'.$payment_methods.'</label></br>';
 							
 						}	
 						echo '</fieldset>';
@@ -72,9 +72,16 @@ require_once "connect.php";
 						
 						
 						echo '<div class="row">';
-						echo	'<div><label for="coment"> Coment for expense</label></div>';
+						echo	'<div><label for="coment"> Comment for expense</label></div>';
 						echo '<textarea name="expense_coment" rows="4" cols="80" maxlength="100"></textarea>';
 						echo '</div></br>';
+						
+						echo '<div class="row">';
+						echo'<div><label for="date"> Expense date</label></div>';
+						echo '<input type="date" name="date_expense" value='.date("Y-m-d").'></label>';
+						echo '</div></br>';
+						
+						
 						
 
 						echo '<div class="row">';
