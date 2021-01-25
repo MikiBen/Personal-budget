@@ -33,6 +33,7 @@ try
 		echo $_SESSION['login'];
 		echo $_SESSION['login'];
 		*/
+		//$password_hash = password_hash($password, PASSWORD_DEFAULT);
 		$sql = "SELECT * FROM users WHERE username='$login' AND password='$password'";
 		$result = $connection->query($sql);
 		
